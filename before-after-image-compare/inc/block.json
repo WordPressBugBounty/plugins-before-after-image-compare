@@ -1,0 +1,145 @@
+{
+	"apiVersion": "1",
+	"name": "icb/image-compare",
+	"title": "Image Compare",
+	"description": "Compare and filter between two images.",
+	"category": "widgets",
+	"keywords": [
+		"image slider",
+		"image compare",
+		"image filter"
+	],
+	"textdomain": "image-compare",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": ""
+		},
+		"cId": {
+			"type": "string",
+			"default": ""
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"width": {
+			"type": "string",
+			"default": "80%"
+		},
+		"border": {
+			"type": "object",
+			"default": {}
+		},
+		"beforeImg": {
+			"type": "object",
+			"default": {
+				"id": null,
+				"url": "",
+				"alt": "",
+				"title": ""
+			}
+		},
+		"afterImg": {
+			"type": "object",
+			"default": {
+				"id": null,
+				"url": "",
+				"alt": "",
+				"title": ""
+			}
+		},
+		"isSwap": {
+			"type": "boolean",
+			"default": false
+		},
+		"isLabel": {
+			"type": "boolean",
+			"default": true
+		},
+		"beforeLabel": {
+			"type": "string",
+			"selector": ".beforeLabel",
+			"default": ""
+		},
+		"afterLabel": {
+			"type": "string",
+			"selector": ".afterLabel",
+			"default": ""
+		},
+		"labelTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": {
+					"desktop": 15,
+					"tablet": 15,
+					"mobile": 15
+				}
+			}
+		},
+		"labelColors": {
+			"type": "object",
+			"default": {
+				"color": "#fff",
+				"bg": "#00000080"
+			}
+		},
+		"labelPadding": {
+			"type": "object",
+			"default": {
+				"vertical": "10px",
+				"horizontal": "15px"
+			}
+		},
+		"isCap": {
+			"type": "boolean",
+			"default": true
+		},
+		"cap": {
+			"type": "string",
+			"selector": ".caption",
+			"default": ""
+		},
+		"capAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"capTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": {
+					"desktop": 14,
+					"tablet": 14,
+					"mobile": 14
+				}
+			}
+		},
+		"capColors": {
+			"type": "object",
+			"default": {
+				"color": "#333",
+				"bg": "#f4f4f4"
+			}
+		},
+		"capPadding": {
+			"type": "object",
+			"default": {
+				"vertical": "10px",
+				"horizontal": "15px"
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"editorScript": "file:../dist/editor.js"
+}
