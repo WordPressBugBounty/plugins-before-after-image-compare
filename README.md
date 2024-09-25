@@ -1,0 +1,1 @@
+# plugins-before-after-image-compare
