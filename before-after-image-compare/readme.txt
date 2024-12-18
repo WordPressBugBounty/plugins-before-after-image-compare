@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image slider, image filter, Gutenberg block
 Requires at least: 6.2+
-Tested up to: 6.6.2
+Tested up to: 6.7.1
 Stable tag: 1.1.7
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -106,65 +106,6 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
-
-= 1.1.7 - 13 May, 2024 =
-* Not load assets if not used block.
-
-= 1.1.6 - 25 Nov, 2023 =
-* Fix the window resize issue.
-
-= 1.1.5 =
-* Fix after-label issue.
-
-= 1.1.4 =
-* Fix issue.
-
-= 1.1.3 =
-* Reduce asset loads.
-
-= 1.1.2 =
-* Fix CSS parent width.
-
-= 1.1.1 =
-* Fix CSS box model not loaded.
-
-= 1.1.0 =
-* Additional class name fix.
-
-= 1.0.9 =
-* Fix post ID error.
-
-= 1.0.8 =
-* Backend UI Change
-
-= 1.0.7 =
-* Add translate feature.
-* Theme Color Support.
-
-= 1.0.6 =
-* Image Compare Init Problem fix
-
-= 1.0.5 =
-* CSS font family fix.
-
-= 1.0.4 =
-* Fix HTML Render
-
-= 1.0.3 =
-* Reduce PHP Code
-* Performance Improvement
-
-= 1.0.2 =
-* Reduce PHP Code
-
-= 1.0.1 =
-* Performance upgrade
-
-= 1.0.0 =
-* Initial Release
-
-
-== Upgrade Notice ==
 
 = 1.1.7 - 13 May, 2024 =
 * Not load assets if not used block.
