@@ -1,9 +1,9 @@
-=== Before After Image Comparison - Image comparison for WP ===
-Contributors: bplugins, abuhayat, charlescormier
+=== Before After Image Comparison - Image comparison for WordPress ===
+Contributors: bplugins, abuhayat, charlescormier, muradwahid, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, image compare, image slider, image filter, Gutenberg block
-Requires at least: 6.2+
-Tested up to: 6.7.1
+Tags: block, image compare, image comparison, image filter, before and after image
+Requires at least: 6.5+
+Tested up to: 6.7.2
 Stable tag: 1.1.7
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -20,10 +20,28 @@ This is a Gutenberg blog plugin that allows you to easily display a comparison s
 
 
 = Features =
-- **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+- **Orientation**: Choose between horizontal and vertical image comparison slider.
+- **Custom Labels**: Add custom before/after labels to clearly indicate the comparison.
+- **Adjustable Slider**: Drag the slider handle to compare images.
+- **Caption Support**: Add descriptive captions below the comparison.
+- **Custom Colors**: Customize colors for labels.
+
+= Premium Features of image slider =
+- **Label Position**: Customize the label position to suit your needs.
+- **Line Shape**: Customize the line shape for a unique and eye-catching design.
+- **Default Offset**: Adjusts the initial position of the slider.
+- **Move Slider On Click**: Enable the option to move the slider when the user clicks on it.
+- **Move Slider On Mouse Over**: Enable the option to move the slider when the mouse hover over it.
+- **Auto Slide**: Activate automatic sliding on the compare images.
+- **Auto Slide Speed**: Set the speed of the auto moving slider.
+- **Stop Slider On Mouse Over**: Pause the sliding movement when the mouse is over the images.
+- **Line Size**: Adjust the line size to your preferred thickness.
+- **Line Color**: Choose a desired color for the line.
+- **Handler Color**: Choose a desired color for the handler.
+- **Icon Color**: Select the icon color from the options provided to match your design.
 
 
-= How to use =
+= How to use beaf =
 - First, install the Image Compare block plugin
 - Add the Image Compare block from the block category called "Widgets" in the Gutenberg editor.
 - You can change block settings from the right-side settings sidebar.
@@ -32,7 +50,7 @@ This is a Gutenberg blog plugin that allows you to easily display a comparison s
 * For installation help click on Installation Tab.
 
 
-= Feedback =
+= Feedbacks on before after image =
 - Did you like this plugin? Dislike it? Do you have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
 
 
@@ -161,4 +179,4 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Performance upgrade
 
 = 1.0.0 =
-* Initial Release
+* Initial Release.
