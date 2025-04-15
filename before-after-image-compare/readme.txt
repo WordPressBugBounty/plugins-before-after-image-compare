@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
 Tested up to: 6.7.2
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -84,7 +84,7 @@ This is a Gutenberg blog plugin that allows you to easily display a comparison s
 = Download & Upload: =
 1. Download the **Image Compare** block plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`image-compare.zip`** file and click on **Install Now**
+3. Click on **Upload Plugin** and choose the **`before-after-image-compare.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
@@ -124,6 +124,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 1.1.9 - 15 March, 2025 =
+* Added slider theme
 
 = 1.1.8 - 13 March, 2025 =
 * Orientation, Label Position, Default Offset

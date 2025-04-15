@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'ICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.8' ) );
+    define( 'ICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.9' ) );
     define( 'ICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'ICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
@@ -126,7 +126,7 @@ if ( function_exists( 'icb_fs' ) ) {
                         '<a href="%s" style="%s" target="__blank">%s</a>',
                         'https://checkout.freemius.com/plugin/18090/plan/30020/?sandbox=true',
                         'color:#4527a4;font-weight:bold',
-                        __( 'Go Pro!', 'slider' )
+                        __( 'Go Pro!', 'image-compare' )
                     );
                 }
                 return $links;

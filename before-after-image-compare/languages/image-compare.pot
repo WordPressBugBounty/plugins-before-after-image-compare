@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Before After Image Comparison - Block 1.1.7\n"
+"Project-Id-Version: Before After Image Comparison - Block 1.1.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/before-after-image-compare\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-08T06:00:27+00:00\n"
+"POT-Creation-Date: 2025-04-15T11:04:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: image-compare\n"
@@ -34,11 +34,15 @@ msgstr ""
 msgid "https://bplugins.com"
 msgstr ""
 
-#: build/view.js:1
+#: plugin.php:137
+msgid "Go Pro!"
+msgstr ""
+
+#: build/view.js:2
 msgid "Before Img"
 msgstr ""
 
-#: build/view.js:1
+#: build/view.js:2
 msgid "After Img"
 msgstr ""
 
@@ -80,4 +84,14 @@ msgstr ""
 #: build/block.json
 msgctxt "block keyword"
 msgid "beaf"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "before after"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "before after image"
 msgstr ""
