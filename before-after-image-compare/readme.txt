@@ -3,17 +3,19 @@ Contributors: bplugins, abuhayat, charlescormier, muradwahid, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
-Tested up to: 6.7.2
-Stable tag: 1.1.9
+Tested up to: 6.8
+Stable tag: 1.1.10
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Before After Image Comparison block for WordPress's block editor.
+Easily showcase visual differences between two images with an interactive before-and-after slider – no coding required!
 
 == Description ==
 
-This is a Gutenberg blog plugin that allows you to easily display a comparison slider of two images. It is very easy to use and does not require any technical knowledge from the end users.
+Easily showcase visual differences between two images with an interactive before-and-after slider—no coding required!
+
+Effortlessly create engaging visual comparisons on your WordPress site using the Before & After Image Comparison Block. This lightweight, SEO-friendly Gutenberg plugin lets you add a responsive slider to posts, pages, or portfolios, making it perfect for highlighting transformations, product comparisons, renovations, or photo edits. Simply drag and drop your images, adjust the slider, and publish—no technical skills needed. Ideal for photographers, designers, real estate agents, and content creators who want to tell compelling visual stories and boost audience engagement.
 
 
 **[Demos](https://bblockswp.com/demo/image-comparison/)**
@@ -27,6 +29,7 @@ This is a Gutenberg blog plugin that allows you to easily display a comparison s
 - **Custom Colors**: Customize colors for labels.
 
 = Premium Features of image slider =
+- **Theme**: Create stunning before & after image comparisons in both single view and slider formats.
 - **Label Position**: Customize the label position to suit your needs.
 - **Line Shape**: Customize the line shape for a unique and eye-catching design.
 - **Default Offset**: Adjusts the initial position of the slider.
@@ -39,6 +42,14 @@ This is a Gutenberg blog plugin that allows you to easily display a comparison s
 - **Line Color**: Choose a desired color for the line.
 - **Handler Color**: Choose a desired color for the handler.
 - **Icon Color**: Select the icon color from the options provided to match your design.
+
+Perfect For:
+- **Before/after reveals** (home makeovers, fitness progress, beauty treatments).
+- **Product comparisons** (features, versions, or upgrades).
+- **Photography edits** (highlighting retouching or filters).
+- **Marketing campaigns** (demonstrating effectiveness or improvements).
+
+No technical skills needed—just upload your images, adjust the slider, and publish! Engage your audience with compelling visual storytelling.
 
 
 = How to use beaf =
@@ -124,6 +135,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 1.1.10 - 6 Aug, 2025 =
+* Update free SDK
 
 = 1.1.9 - 15 March, 2025 =
 * Added slider theme

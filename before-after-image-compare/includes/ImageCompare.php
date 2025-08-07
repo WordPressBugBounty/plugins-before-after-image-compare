@@ -19,7 +19,7 @@ class ImageCompare {
 				);
 			}
 
-						function adminEnqueueScripts($hook) {
+		function adminEnqueueScripts($hook) {
 				if( strpos( $hook, 'image-compare')){
 					// wp_enqueue_style('view-css',ICB_DIR_URL . 'build/view.css',[],ICB_PLUGIN_VERSION);
 					// wp_enqueue_script('view-js',ICB_DIR_URL . 'build/view.js',['react', 'react-dom'],ICB_PLUGIN_VERSION);

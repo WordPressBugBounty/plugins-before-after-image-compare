@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.9
+ * Version: 1.1.10
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'ICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.9' ) );
+    define( 'ICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.10' ) );
     define( 'ICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'ICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
@@ -28,7 +28,7 @@ if ( function_exists( 'icb_fs' ) ) {
             global $icb_fs;
             if ( !isset( $icb_fs ) ) {
                 $fsStartPath = dirname( __FILE__ ) . '/freemius/start.php';
-                $bSDKInitPath = dirname( __FILE__ ) . '/bplugins_sdk/init.php';
+                $bSDKInitPath = dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
                 if ( ICB_HAS_PRO && file_exists( $fsStartPath ) ) {
                     require_once $fsStartPath;
                 } else {
