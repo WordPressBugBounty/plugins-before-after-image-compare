@@ -1,10 +1,10 @@
-=== Before After Image Comparison - Image comparison for WordPress ===
+=== Before After Image Comparison – Visual Comparison for Two Images ===
 Contributors: bplugins, abuhayat, charlescormier, muradwahid, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
 Tested up to: 6.8
-Stable tag: 1.1.10
+Stable tag: 1.1.11
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -135,6 +135,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 1.1.11 - 7 Sep 2025 =
+* Added Pricing page in the Dashboard.
 
 = 1.1.10 - 6 Aug, 2025 =
 * Update free SDK

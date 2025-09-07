@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.10
+ * Version: 1.1.11
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,22 +17,22 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'ICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.10' ) );
-    define( 'ICB_DIR_URL', plugin_dir_url( __FILE__ ) );
-    define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
-    define( 'ICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
-    define( 'ICB_HAS_PRO', 'before-after-image-compare-pro/plugin.php' === plugin_basename( __FILE__ ) );
+    define( 'BAICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.11' ) );
+    define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
+    define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+    define( 'BAICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
+    define( 'BAICB_HAS_PRO', 'before-after-image-compare-pro/plugin.php' === plugin_basename( __FILE__ ) );
     if ( !function_exists( 'icb_fs' ) ) {
         // Create a helper function for easy SDK access.
         function icb_fs() {
             global $icb_fs;
             if ( !isset( $icb_fs ) ) {
-                $fsStartPath = dirname( __FILE__ ) . '/freemius/start.php';
+                $fsStartPath = dirname( __FILE__ ) . '/vendor/freemius/start.php';
                 $bSDKInitPath = dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
-                if ( ICB_HAS_PRO && file_exists( $fsStartPath ) ) {
+                if ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ) {
                     require_once $fsStartPath;
                 } else {
-                    if ( ICB_HAS_FREE && file_exists( $bSDKInitPath ) ) {
+                    if ( BAICB_HAS_FREE && file_exists( $bSDKInitPath ) ) {
                         require_once $bSDKInitPath;
                     }
                 }
@@ -60,7 +60,7 @@ if ( function_exists( 'icb_fs' ) ) {
                         ),
                     ),
                 );
-                $icb_fs = ( ICB_HAS_PRO && file_exists( $fsStartPath ) ? fs_dynamic_init( $icbConfig ) : fs_lite_dynamic_init( $icbConfig ) );
+                $icb_fs = ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ? fs_dynamic_init( $icbConfig ) : fs_lite_dynamic_init( $icbConfig ) );
             }
             return $icb_fs;
         }
@@ -70,7 +70,7 @@ if ( function_exists( 'icb_fs' ) ) {
         // Signal that SDK was initiated.
         do_action( 'icb_fs_loaded' );
     }
-    function icbIsPremium() {
+    function icbImageCompareChecker() {
         return icb_fs()->can_use_premium_code();
     }
 
@@ -100,7 +100,7 @@ if ( function_exists( 'icb_fs' ) ) {
                     wp_send_json_error( 'Invalid Request' );
                 }
                 wp_send_json_success( [
-                    'isPipe' => icbIsPremium(),
+                    'isPipe' => icbImageCompareChecker(),
                 ] );
             }
 
@@ -141,4 +141,5 @@ if ( function_exists( 'icb_fs' ) ) {
         new ICBPlugin();
     }
     require_once "includes/ImageCompare.php";
+    require_once "includes/blocks.php";
 }
