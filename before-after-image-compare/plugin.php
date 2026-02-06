@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.14
+ * Version: 1.1.15
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,8 +17,8 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    // define( 'BAICB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.13' );
-    define( 'BAICB_PLUGIN_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '1.1.14' ) );
+    define( 'BAICB_PLUGIN_VERSION', '1.1.15' );
+    // define( 'BAICB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.14' );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'BAICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
@@ -32,9 +32,11 @@ if ( function_exists( 'icb_fs' ) ) {
                 $bSDKInitPath = dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
                 if ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ) {
                     require_once $fsStartPath;
+                    require_once "includes/CPT.php";
                 } else {
                     if ( BAICB_HAS_FREE && file_exists( $bSDKInitPath ) ) {
                         require_once $bSDKInitPath;
+                        require_once "includes/ImageCompare.php";
                     }
                 }
                 $icbConfig = array(
@@ -54,10 +56,10 @@ if ( function_exists( 'icb_fs' ) ) {
                     ),
                     'menu'                => array(
                         'slug'       => 'image-compare',
-                        'first-path' => 'tools.php?page=image-compare#/dashboard',
+                        'first-path' => ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ? 'edit.php?post_type=image-compare' : 'tools.php?page=image-compare#/dashboard' ),
                         'support'    => false,
                         'parent'     => array(
-                            'slug' => 'tools.php',
+                            'slug' => ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ? 'edit.php?post_type=image-compare' : 'tools.php' ),
                         ),
                     ),
                 );
@@ -133,13 +135,17 @@ if ( function_exists( 'icb_fs' ) ) {
                 return $links;
             }
 
+            public function icbChecker() {
+                wp_add_inline_script( 'icb-image-compare-editor-script', "const icbImageCompareChecker=" . wp_json_encode( icbImageCompareChecker() ), 'before' );
+            }
+
             function onInit() {
                 register_block_type( __DIR__ . '/build' );
+                $this->icbChecker();
             }
 
         }
 
         new ICBPlugin();
     }
-    require_once "includes/ImageCompare.php";
 }

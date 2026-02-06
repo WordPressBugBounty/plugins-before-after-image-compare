@@ -3,7 +3,6 @@
 class ImageCompare {
 
 	public function __construct(){
-		add_action( 'init', [$this, 'icbChecker'] );
 		add_action( 'admin_menu', [$this, 'adminMenu'] );
 		add_action( 'admin_enqueue_scripts', [$this, 'adminEnqueueScripts'] );
 	}
@@ -47,9 +46,6 @@ class ImageCompare {
 				<div id="icbAdminDashboard"  data-dashboard="<?php echo esc_attr( wp_json_encode( $dashboardData )  ); ?>">
 				</div>
 				<?php
-			}
-			public function icbChecker(){
-				wp_add_inline_script( 'icb-image-compare-editor-script', "const icbImageCompareChecker=". wp_json_encode(icbImageCompareChecker()),'before');
 			}
 }
 

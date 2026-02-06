@@ -4,10 +4,10 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
 Tested up to: 6.9
-Stable tag: 1.1.14
+Stable tag: 1.1.15
 Requires PHP: 7.2
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html 
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Easily showcase visual differences between two images with an interactive before-and-after slider – no coding required!
 
@@ -137,6 +137,9 @@ Please report security bugs found in the source code of the Before After Image C
 
 
 == Changelog ==
+
+= 1.1.15 - 5 Feb 2026 =
+* Shortcode support added (premium feature).
 
 = 1.1.14 - 17 Dec 2025 =
 * Improved performance.
