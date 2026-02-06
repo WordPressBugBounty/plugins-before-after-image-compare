@@ -3,11 +3,11 @@ Contributors: bplugins, abuhayat, charlescormier, muradwahid, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
-Tested up to: 6.8
-Stable tag: 1.1.11
-Requires PHP: 7.1
+Tested up to: 6.9
+Stable tag: 1.1.14
+Requires PHP: 7.2
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 
 Easily showcase visual differences between two images with an interactive before-and-after slider – no coding required!
 
@@ -18,7 +18,7 @@ Easily showcase visual differences between two images with an interactive before
 Effortlessly create engaging visual comparisons on your WordPress site using the Before & After Image Comparison Block. This lightweight, SEO-friendly Gutenberg plugin lets you add a responsive slider to posts, pages, or portfolios, making it perfect for highlighting transformations, product comparisons, renovations, or photo edits. Simply drag and drop your images, adjust the slider, and publish—no technical skills needed. Ideal for photographers, designers, real estate agents, and content creators who want to tell compelling visual stories and boost audience engagement.
 
 
-**[Demos](https://bblockswp.com/demo/image-comparison/)**
+**[Before After Image Comparison](https://bplugins.com/products/before-after-image-compare/)** | **[Pricing](https://bplugins.com/products/before-after-image-compare/pricing/)** | **[Demos](https://bblockswp.com/demo/image-comparison/)** | 
 
 
 = Features =
@@ -125,6 +125,8 @@ You can use unlimited times as you want.
 
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/image-compare/)
 
+= Where do I report security bugs found in this plugin? =
+Please report security bugs found in the source code of the Before After Image Comparison – Image comparison for WP plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fc6a0-951a-43ea-82ff-aa51f89c9d7b). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Screenshots ==
 
@@ -135,6 +137,15 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 1.1.14 - 17 Dec 2025 =
+* Improved performance.
+
+= 1.1.13 - 15 Dec 2025 =
+* Fixed icon style issue.
+
+= 1.1.12 - 21 Nov 2025 =
+* Fixed premium conflict.
 
 = 1.1.11 - 7 Sep 2025 =
 * Added Pricing page in the Dashboard.

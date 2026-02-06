@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.11
+ * Version: 1.1.14
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,7 +17,8 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'BAICB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.11' ) );
+    // define( 'BAICB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.13' );
+    define( 'BAICB_PLUGIN_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '1.1.14' ) );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'BAICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
@@ -42,7 +43,7 @@ if ( function_exists( 'icb_fs' ) ) {
                     'premium_slug'        => 'before-after-image-compare-pro',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_6a648d36975ea248f33e60908ed11',
-                    'is_premium'          => true,
+                    'is_premium'          => false,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,
@@ -141,5 +142,4 @@ if ( function_exists( 'icb_fs' ) ) {
         new ICBPlugin();
     }
     require_once "includes/ImageCompare.php";
-    require_once "includes/blocks.php";
 }
