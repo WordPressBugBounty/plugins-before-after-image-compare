@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.15
+ * Version: 1.1.16
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,8 +17,8 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'BAICB_PLUGIN_VERSION', '1.1.15' );
-    // define( 'BAICB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.14' );
+    define( 'BAICB_PLUGIN_VERSION', '1.1.16' );
+    // define( 'BAICB_PLUGIN_VERSION',  isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'murdwahid.local' === $_SERVER['HTTP_HOST'] ) ? time() : '1.1.15' );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'BAICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
@@ -32,11 +32,9 @@ if ( function_exists( 'icb_fs' ) ) {
                 $bSDKInitPath = dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
                 if ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ) {
                     require_once $fsStartPath;
-                    require_once "includes/CPT.php";
                 } else {
                     if ( BAICB_HAS_FREE && file_exists( $bSDKInitPath ) ) {
                         require_once $bSDKInitPath;
-                        require_once "includes/ImageCompare.php";
                     }
                 }
                 $icbConfig = array(
@@ -55,11 +53,11 @@ if ( function_exists( 'icb_fs' ) ) {
                         'is_require_payment' => false,
                     ),
                     'menu'                => array(
-                        'slug'       => 'image-compare',
-                        'first-path' => ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ? 'edit.php?post_type=image-compare' : 'tools.php?page=image-compare#/dashboard' ),
+                        'slug'       => 'edit.php?post_type=image-compare',
+                        'first-path' => 'edit.php?post_type=image-compare',
                         'support'    => false,
                         'parent'     => array(
-                            'slug' => ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ? 'edit.php?post_type=image-compare' : 'tools.php' ),
+                            'slug' => 'edit.php?post_type=image-compare',
                         ),
                     ),
                 );
@@ -126,8 +124,8 @@ if ( function_exists( 'icb_fs' ) ) {
             public function plugin_action_links( $links, $file ) {
                 if ( plugin_basename( __FILE__ ) == $file ) {
                     $links['go_pro'] = sprintf(
-                        '<a href="%s" style="%s" target="__blank">%s</a>',
-                        'https://checkout.freemius.com/plugin/18090/plan/30020/?sandbox=true',
+                        '<a href="%s" style="%s" target="">%s</a>',
+                        site_url( "/wp-admin/edit.php?post_type=image-compare&page=image-compare-help#/pricing" ),
                         'color:#4527a4;font-weight:bold',
                         __( 'Go Pro!', 'image-compare' )
                     );
@@ -148,4 +146,5 @@ if ( function_exists( 'icb_fs' ) ) {
 
         new ICBPlugin();
     }
+    require_once __DIR__ . "/includes/CPT.php";
 }

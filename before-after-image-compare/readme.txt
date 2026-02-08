@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
 Tested up to: 6.9
-Stable tag: 1.1.15
+Stable tag: 1.1.16
 Requires PHP: 7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -27,6 +27,7 @@ Effortlessly create engaging visual comparisons on your WordPress site using the
 - **Adjustable Slider**: Drag the slider handle to compare images.
 - **Caption Support**: Add descriptive captions below the comparison.
 - **Custom Colors**: Customize colors for labels.
+- **Shortcode Support**: shortcode support for the block.
 
 = Premium Features of image slider =
 - **Theme**: Create stunning before & after image comparisons in both single view and slider formats.
@@ -138,8 +139,11 @@ Please report security bugs found in the source code of the Before After Image C
 
 == Changelog ==
 
+= 1.1.16 - 8 Feb 2026 =
+* Fixed: Shortcode issues.
+
 = 1.1.15 - 5 Feb 2026 =
-* Shortcode support added (premium feature).
+* Shortcode support added.
 
 = 1.1.14 - 17 Dec 2025 =
 * Improved performance.
