@@ -39,7 +39,9 @@ class ImageCompare {
 					"version" => BAICB_PLUGIN_VERSION,
 					"logo"	=> 'https://ps.w.org/before-after-image-compare/assets/icon-128x128.png?rev=3193735',
 					"isPremium" => icbImageCompareChecker(),
-					"nonce" => wp_create_nonce("wp_ajax")
+					"nonce" => wp_create_nonce("wp_ajax"),
+					"hasPro"=> BAICB_HAS_PRO,
+					'licenseActiveNonce' => wp_create_nonce("baicbLicenseActivation")
 				];
 
 				?>

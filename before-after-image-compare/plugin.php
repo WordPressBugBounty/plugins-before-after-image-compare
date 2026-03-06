@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.16
+ * Version: 1.1.17
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,12 +17,13 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'BAICB_PLUGIN_VERSION', '1.1.16' );
+    define( 'BAICB_PLUGIN_VERSION', '1.1.17' );
     // define( 'BAICB_PLUGIN_VERSION',  isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'murdwahid.local' === $_SERVER['HTTP_HOST'] ) ? time() : '1.1.15' );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'BAICB_HAS_FREE', 'before-after-image-compare/plugin.php' === plugin_basename( __FILE__ ) );
-    define( 'BAICB_HAS_PRO', 'before-after-image-compare-pro/plugin.php' === plugin_basename( __FILE__ ) );
+    define( 'BAICB_HAS_PRO', file_exists( dirname( __FILE__ ) . '/vendor/freemius/start.php' ) );
+    // define('BAICB_HAS_PRO', BAICB_DIR_PATH .'/vendor/freemius/start.php');
     if ( !function_exists( 'icb_fs' ) ) {
         // Create a helper function for easy SDK access.
         function icb_fs() {
@@ -30,6 +31,9 @@ if ( function_exists( 'icb_fs' ) ) {
             if ( !isset( $icb_fs ) ) {
                 $fsStartPath = dirname( __FILE__ ) . '/vendor/freemius/start.php';
                 $bSDKInitPath = dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
+                if ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ) {
+                    require_once BAICB_DIR_PATH . '/includes/LicenseActivation.php';
+                }
                 if ( BAICB_HAS_PRO && file_exists( $fsStartPath ) ) {
                     require_once $fsStartPath;
                 } else {
@@ -84,6 +88,18 @@ if ( function_exists( 'icb_fs' ) ) {
                 add_action( 'wp_ajax_nopriv_icbPremiumChecker', [$this, 'icbPremiumChecker'] );
                 add_action( 'admin_init', [$this, 'registerSettings'] );
                 add_action( 'rest_api_init', [$this, 'registerSettings'] );
+                add_action(
+                    'default_title',
+                    [$this, 'defaultTitle'],
+                    10,
+                    2
+                );
+                add_action(
+                    'default_content',
+                    [$this, 'defaultContent'],
+                    10,
+                    2
+                );
                 // check premium
                 if ( !icb_fs()->can_use_premium_code() ) {
                     add_filter(
@@ -93,6 +109,20 @@ if ( function_exists( 'icb_fs' ) ) {
                         2
                     );
                 }
+            }
+
+            function defaultTitle( $title, $post ) {
+                if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
+                    return sanitize_text_field( wp_unslash( $_GET['title'] ) );
+                }
+                return $title;
+            }
+
+            function defaultContent( $content, $post ) {
+                if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
+                    return wp_unslash( $_GET['content'] );
+                }
+                return $content;
             }
 
             function icbPremiumChecker() {

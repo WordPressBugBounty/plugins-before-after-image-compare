@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image compare, image comparison, image filter, before and after image
 Requires at least: 6.5+
 Tested up to: 6.9
-Stable tag: 1.1.16
+Stable tag: 1.1.17
 Requires PHP: 7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -139,79 +139,82 @@ Please report security bugs found in the source code of the Before After Image C
 
 == Changelog ==
 
+= 1.1.17 - 7 March 2026 =
+* Add: New Dashboard.
+
 = 1.1.16 - 8 Feb 2026 =
 * Fixed: Shortcode issues.
 
 = 1.1.15 - 5 Feb 2026 =
-* Shortcode support added.
+* Add: Shortcode support.
 
 = 1.1.14 - 17 Dec 2025 =
 * Improved performance.
 
 = 1.1.13 - 15 Dec 2025 =
-* Fixed icon style issue.
+* Fixed: Icon style issue.
 
 = 1.1.12 - 21 Nov 2025 =
-* Fixed premium conflict.
+* Fixed: Premium conflict.
 
 = 1.1.11 - 7 Sep 2025 =
-* Added Pricing page in the Dashboard.
+* Add: Pricing page in the Dashboard.
 
 = 1.1.10 - 6 Aug, 2025 =
 * Update free SDK
 
 = 1.1.9 - 15 March, 2025 =
-* Added slider theme
+* Add: slider theme
 
 = 1.1.8 - 13 March, 2025 =
-* Orientation, Label Position, Default Offset
-* Move Slider On Click, Move Slider On Mouse Over
-* Auto Slide Speed, Stop Slider On Mouse Over
-* Added amazing line Shape, Height, Line Size
-* Line Color, Handler Color, Icon Color.
+* Add: Orientation, Label Position, Default Offset
+* Add: Move Slider On Click, Move Slider On Mouse Over
+* Add: Auto Slide Speed, Stop Slider On Mouse Over
+* Add: amazing line Shape, Height, Line Size
+* Add: Line Color, Handler Color, Icon Color.
 
 = 1.1.7 - 13 May, 2024 =
 * Not load assets if not used block.
 
 = 1.1.6 - 25 Nov, 2023 =
-* Fix the window resize issue.
+* Fix: Window resize issue.
 
 = 1.1.5 =
-* Fix after-label issue.
+* Fix: After-label issue.
 
 = 1.1.4 =
-* Fix issue.
+* Fix issues.
 
 = 1.1.3 =
 * Reduce asset loads.
 
 = 1.1.2 =
-* Fix CSS parent width.
+* Fix: CSS parent width.
 
 = 1.1.1 =
-* Fix CSS box model not loaded.
+* Fix: CSS box model not loaded.
 
 = 1.1.0 =
-* Additional class name fix.
+* Fix: Additional class name.
 
 = 1.0.9 =
-* Fix post ID error.
+* Fix: post ID error.
 
 = 1.0.8 =
 * Backend UI Change
 
 = 1.0.7 =
-* Add translate feature.
+* Add: translate feature.
 * Theme Color Support.
 
 = 1.0.6 =
-* Image Compare Init Problem fix
+* Fix: Image Compare Init Problem
 
 = 1.0.5 =
-* CSS font family fix.
+* Fix: CSS font family.
 
 = 1.0.4 =
-* Fix HTML Render
+* Fix: HTML Render
 
 = 1.0.3 =
 * Reduce PHP Code
