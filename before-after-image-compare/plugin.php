@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.17
+ * Version: 1.1.18
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'BAICB_PLUGIN_VERSION', '1.1.17' );
+    define( 'BAICB_PLUGIN_VERSION', '1.1.18' );
     // define( 'BAICB_PLUGIN_VERSION',  isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'murdwahid.local' === $_SERVER['HTTP_HOST'] ) ? time() : '1.1.15' );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
