@@ -9,7 +9,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Interactive before-and-after image comparison slider for WordPress. Compare two images with a draggable handle – no coding required.
+Interactive before-and-after image comparison slider for WordPress. Compare two images with a draggable handle – no coding required. 
 
 == Description ==
 
