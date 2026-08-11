@@ -1,75 +1,75 @@
-=== Before After Image Comparison – Show Transformations at a Glance ===
+=== Before After Image Comparison – Visual Comparison for Two Images ===
 Contributors: bplugins, abuhayat, charlescormier, muradwahid, freemius
-Tags: block, image compare, image comparison, image filter, before and after image
-Tested up to: 6.9
-Stable tag: 1.1.19
-Requires PHP: 7.2
-Requires at least: 6.5+
 Donate link: https://www.buymeacoffee.com/abuhayat
+Tags: block, image compare, image comparison, image filter, before and after image
+Requires at least: 6.5+
+Tested up to: 6.9
+Stable tag: 1.1.20
+Requires PHP: 7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Interactive before-and-after image comparison slider for WordPress. Compare two images with a draggable handle – no coding required. 
+Easily showcase visual differences between two images with an interactive before-and-after slider – no coding required!
 
 == Description ==
 
-**Show visitors the difference instantly – an interactive before-and-after slider that lets them drag between two images and see the transformation for themselves.**
+Easily showcase visual differences between two images with an interactive before-and-after slider—no coding required!
 
-[**Before After Image Comparison**](https://bplugins.com/products/before-after-image-compare/) | [**Pricing**](https://bplugins.com/products/before-after-image-compare/pricing/) | [**Demos**](https://bblockswp.com/demo/image-comparison/)
+Effortlessly create engaging visual comparisons on your WordPress site using the Before & After Image Comparison Block. This lightweight, SEO-friendly Gutenberg plugin lets you add a responsive slider to posts, pages, or portfolios, making it perfect for highlighting transformations, product comparisons, renovations, or photo edits. Simply drag and drop your images, adjust the slider, and publish—no technical skills needed. Ideal for photographers, designers, real estate agents, and content creators who want to tell compelling visual stories and boost audience engagement.
 
-### Why Before After Image Comparison?
 
-Telling people something changed is one thing – letting them see it is far more convincing. **Before After Image Comparison** adds a responsive, draggable slider to any post, page, or portfolio, making it perfect for highlighting transformations, product comparisons, renovations, or photo edits.
+**[Before After Image Comparison](https://bplugins.com/products/before-after-image-compare/)** | **[Pricing](https://bplugins.com/products/before-after-image-compare/pricing/)** | **[Demos](https://bblockswp.com/demo/image-comparison/)** | 
 
-This lightweight, SEO-friendly Gutenberg block requires no technical skills: simply drag and drop your two images, adjust the slider, and publish. It is ideal for photographers, designers, real estate agents, and content creators who want to tell compelling visual stories and boost audience engagement.
 
-### Free Features
+= Features =
+- **Orientation**: Choose between horizontal and vertical image comparison slider.
+- **Custom Labels**: Add custom before/after labels to clearly indicate the comparison.
+- **Adjustable Slider**: Drag the slider handle to compare images.
+- **Caption Support**: Add descriptive captions below the comparison.
+- **Custom Colors**: Customize colors for labels.
+- **Shortcode Support**: shortcode support for the block.
 
-- **Orientation:** Choose between a horizontal or vertical comparison slider.
-- **Custom Labels:** Add before/after labels to clearly indicate the comparison.
-- **Adjustable Slider:** Visitors drag the slider handle to compare images.
-- **Caption Support:** Add a descriptive caption below the comparison.
-- **Custom Colors:** Customize the label colors.
-- **Shortcode Support:** Use the block anywhere via shortcode.
+= Premium Features of image slider =
+- **Theme**: Create stunning before & after image comparisons in both single view and slider formats.
+- **Label Position**: Customize the label position to suit your needs.
+- **Line Shape**: Customize the line shape for a unique and eye-catching design.
+- **Default Offset**: Adjusts the initial position of the slider.
+- **Move Slider On Click**: Enable the option to move the slider when the user clicks on it.
+- **Move Slider On Mouse Over**: Enable the option to move the slider when the mouse hover over it.
+- **Auto Slide**: Activate automatic sliding on the compare images.
+- **Auto Slide Speed**: Set the speed of the auto moving slider.
+- **Stop Slider On Mouse Over**: Pause the sliding movement when the mouse is over the images.
+- **Line Size**: Adjust the line size to your preferred thickness.
+- **Line Color**: Choose a desired color for the line.
+- **Handler Color**: Choose a desired color for the handler.
+- **Icon Color**: Select the icon color from the options provided to match your design.
 
-### Pro Version
+Perfect For:
+- **Before/after reveals** (home makeovers, fitness progress, beauty treatments).
+- **Product comparisons** (features, versions, or upgrades).
+- **Photography edits** (highlighting retouching or filters).
+- **Marketing campaigns** (demonstrating effectiveness or improvements).
 
-Want more design control and motion? The [**premium version**](https://bplugins.com/products/before-after-image-compare/pricing/) adds themes, auto-sliding, and full styling options.
+No technical skills needed—just upload your images, adjust the slider, and publish! Engage your audience with compelling visual storytelling.
 
-**Pro features include:**
 
-- **Themes:** Create stunning comparisons in both single view and slider formats.
-- **Label Position:** Place labels wherever suits your design.
-- **Line Shape:** Customize the divider line shape for an eye-catching look.
-- **Default Offset:** Set the initial position of the slider handle.
-- **Move on Click / Mouse Over:** Move the slider when visitors click or hover.
-- **Auto Slide:** Animate the slider automatically, with adjustable speed.
-- **Stop on Mouse Over:** Pause auto-sliding while the mouse is over the images.
-- **Line Size & Color:** Adjust the divider thickness and color.
-- **Handler & Icon Colors:** Match the handle and icons to your design.
+= How to use beaf =
+- First, install the Image Compare block plugin
+- Add the Image Compare block from the block category called "Widgets" in the Gutenberg editor.
+- You can change block settings from the right-side settings sidebar.
+- Enjoy!
 
-### How to Use
+* For installation help click on Installation Tab.
 
-1. Install and activate the **Image Compare** block plugin.
-2. In the Gutenberg editor, add the **Image Compare** block from the "Widgets" block category.
-3. Upload your before and after images.
-4. Adjust settings from the right-side settings sidebar.
-5. Publish – visitors can now drag the slider to compare.
 
-For installation help, click on the Installation tab.
+= Feedbacks on before after image =
+- Did you like this plugin? Dislike it? Do you have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
 
-### Use Cases
-
-- **Before/After Reveals:** Home makeovers, fitness progress, beauty treatments.
-- **Product Comparisons:** Features, versions, or upgrades side by side.
-- **Photography Edits:** Highlight retouching, filters, and color grading.
-- **Marketing Campaigns:** Demonstrate effectiveness or improvements visually.
-
-Did you like this plugin? Dislike it? Do you have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback').
 
 ### ⭐ Check out the Parent Plugin of this plugin-
 
 🔥 **[B Blocks](https://bblockswp.com)** – Best gutenberg blocks collections for WordPress.
+
 
 ### ⭐ Check out our other WordPress Plugins-
 
@@ -85,58 +85,48 @@ Did you like this plugin? Dislike it? Do you have a feature request? [Please sha
 
 🔥 **[Advanced Post Block](https://bplugins.com/products/advanced-post-block)** – Best Post Display Plugin for WordPress.
 
+
 == Installation ==
 
-**From your WordPress dashboard (recommended):**
+= From Gutenberg Editor: =
+1. Go to the WordPress Block/Gutenberg Editor
+2. Search For **Image Compare** block.
+3. Click on the **Image Compare** to add the block
 
-1. Go to **Plugins → Add New**.
-2. Search for **"Before After Image Comparison"**.
-3. Click **Install Now**, then **Activate**.
-4. In the Gutenberg editor, add the **Image Compare** block to any post or page.
+= Download & Upload: =
+1. Download the **Image Compare** block plugin (*.zip file*)
+2. In your admin area, go to the Plugins menu and click on **Add New**
+3. Click on **Upload Plugin** and choose the **`before-after-image-compare.zip`** file and click on **Install Now**
+4. Activate the plugin and Enjoy!
 
-**Manual installation:**
+= Manually: =
+1. Download and upload the **Image Compare** block plugin to the **`/wp-content/plugins/`** directory
+2. Activate the plugin through the Plugins menu in WordPress
 
-1. Download the plugin (*.zip file*).
-2. In your admin area, go to **Plugins → Add New** and click **Upload Plugin**.
-3. Choose the **`before-after-image-compare.zip`** file and click **Install Now**.
-4. Activate the plugin through the **Plugins** menu in WordPress.
 
 == Frequently Asked Questions ==
 
-= Is the Image Compare block free? =
+= Is Image Compare block free? =
 
-Yes, the Image Compare block is a free Gutenberg block plugin. A premium version with extra themes and slider options is available.
+Yes, the Image Compare block is a free Gutenberg block plugin.
 
 = Does it work with any WordPress theme? =
 
-Yes, it works with any standard WordPress theme.
+Yes, it will work with any standard WordPress theme.
 
 = Can I change block settings? =
 
-Yes, you can change all block settings from the Gutenberg editor's right-side sidebar.
+Yes, you can change block settings from the Gutenberg block editor's right sidebar.
 
-= How many times can I reuse the block? =
+= How many times can I reuse a block? =
 
-You can use the block an unlimited number of times across your site.
-
-= Can I make the slider vertical instead of horizontal? =
-
-Yes. You can choose between horizontal and vertical orientation for the comparison slider.
-
-= Can I use the comparison slider outside the block editor? =
-
-Yes. The plugin includes shortcode support, so you can place a comparison anywhere shortcodes are accepted.
-
-= Can the slider move automatically? =
-
-Yes, in the premium version you can enable Auto Slide, set its speed, and pause the movement when the mouse is over the images.
+You can use unlimited times as you want.
 
 = Where can I get support? =
 
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/image-compare/).
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/image-compare/)
 
 = Where do I report security bugs found in this plugin? =
-
 Please report security bugs found in the source code of the Before After Image Comparison – Image comparison for WP plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fc6a0-951a-43ea-82ff-aa51f89c9d7b). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Screenshots ==
@@ -146,7 +136,11 @@ Please report security bugs found in the source code of the Before After Image C
 3. Without Caption
 4. Caption and Labels Customize
 
+
 == Changelog ==
+
+= 1.1.20 - 11 August 2026 =
+* Added: Video comparison theme.
 
 = 1.1.19 - 9 July 2026 =
 * Fixed: Pricing URL.

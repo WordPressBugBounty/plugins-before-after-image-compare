@@ -306,6 +306,80 @@
           "caption": "Before After Image Caption"
         }
       ]
+    },
+    "video": {
+      "type": "object",
+      "default": {
+        "beforeVideo": {
+          "url": ""
+        },
+        "afterVideo": {
+          "url": ""
+        },
+        "beforeLabel": "Before Label",
+        "afterLabel": "After Label",
+        "caption": "Before After Video Caption"
+      }
+    },
+    "videoSlider": {
+      "type": "array",
+      "default": [
+        {
+          "beforeVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Video Caption"
+        },
+        {
+          "beforeVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Video Caption"
+        },
+        {
+          "beforeVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterVideo": {
+            "video": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Video Caption"
+        }
+      ]
+    },
+    "videoOptions": {
+      "type": "object",
+      "default": {
+        "autoPlay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "playsInline": true
+      }
     }
   },
   "supports": {
