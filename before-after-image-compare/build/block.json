@@ -1,8 +1,8 @@
 {
   "apiVersion": 3,
   "name": "icb/image-compare",
-  "title": "Image Compare",
-  "description": "Compare and filter between two images.",
+  "title": "Before After Comparison",
+  "description": "Compare and filter between two media.",
   "category": "widgets",
   "keywords": [
     "image comparison",
@@ -12,7 +12,10 @@
     "before and after image",
     "beaf",
     "before after",
-    "before after image"
+    "before after image",
+    "Before After Comparison",
+    "video comparison",
+    "slider"
   ],
   "textdomain": "image-compare",
   "attributes": {

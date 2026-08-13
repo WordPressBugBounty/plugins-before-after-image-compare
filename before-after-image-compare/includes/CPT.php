@@ -21,10 +21,10 @@ class CPT {
     public function registerIcbPostType() {
         register_post_type( $this->post_type, [
             'labels' => [
-                'name'               => __( 'Image Compare', 'image-compare' ),
+                'name'               => __( 'Before After Comparison', 'image-compare' ),
                 'singular_name'      => __( 'Image Compare', 'image-compare' ),
                 'add_new'            => __( 'Add New', 'image-compare' ),
-                'add_new_item'       => __( 'Add New Image Compare', 'image-compare' ),
+                'add_new_item'       => __( 'Add New', 'image-compare' ),
                 'edit_item'          => __( 'Edit Image Compare', 'image-compare' ),
                 'all_items'          => __( 'All Comparisons', 'image-compare' ),
                 'not_found'          => __( 'No comparisons found.', 'image-compare' ),
@@ -109,7 +109,8 @@ class CPT {
 					"isPremium" => icbImageCompareChecker(),
 					"nonce" => wp_create_nonce("icbLicenseActivation"),
 					"hasPro"=> BAICB_HAS_PRO,
-					'licenseActiveNonce' => wp_create_nonce("icbLicenseActivation")
+					'licenseActiveNonce' => wp_create_nonce("icbLicenseActivation"),
+                    'adminUrl' => admin_url()
 				];
 
 				?>

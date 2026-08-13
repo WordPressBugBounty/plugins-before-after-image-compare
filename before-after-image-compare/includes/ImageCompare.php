@@ -41,7 +41,8 @@ class ImageCompare {
 					"isPremium" => icbImageCompareChecker(),
 					"nonce" => wp_create_nonce("wp_ajax"),
 					"hasPro"=> BAICB_HAS_PRO,
-					'licenseActiveNonce' => wp_create_nonce("baicbLicenseActivation")
+					'licenseActiveNonce' => wp_create_nonce("baicbLicenseActivation"),
+					'adminUrl' => admin_url()
 				];
 
 				?>
