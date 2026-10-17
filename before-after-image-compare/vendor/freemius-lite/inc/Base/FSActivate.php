@@ -47,8 +47,21 @@ class FSActivate extends FS_Lite
     }
 
 
+    private function verify_ajax_request()
+    {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Forbidden', 403);
+        }
+        if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'] ?? '')), "wp_ajax")) {
+            wp_send_json_error('Invalid Request', 403);
+        }
+    }
+
     function fs_admin_notice()
     {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         $fs_accounts = $this->get_fs_accounts();
         $notice = $fs_accounts['admin_notices'][$this->config->slug]['activation_pending'] ?? [];
         echo "<div class='fs_notice_board' data-nonce='" . esc_attr(wp_create_nonce('wp_ajax')) . "' data-slug='" . esc_attr($this->config->slug) . "' data data-notice='" . esc_attr(wp_json_encode($notice)) . "'></div>";
@@ -56,9 +69,7 @@ class FSActivate extends FS_Lite
 
     function fs_notice_dismiss()
     {
-        if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'] ?? '')), "wp_ajax")) {
-            wp_send_json_error();
-        }
+        $this->verify_ajax_request();
         $fs_accounts = $this->get_fs_accounts();
         unset($fs_accounts['admin_notices'][$this->config->slug]['activation_pending']);
         update_option('fs_lite_accounts', $fs_accounts);
@@ -67,13 +78,23 @@ class FSActivate extends FS_Lite
 
     function fs_init()
     {
-        if (!wp_verify_nonce(sanitize_text_field(wp_unslash(isset($_POST['nonce']) ? $_POST['nonce'] : '')), "wp_ajax")) {
-            wp_send_json_error();
-        }
+        $this->verify_ajax_request();
         try {
             $info = map_deep(wp_unslash(isset($_POST['info']) ? $_POST['info'] : []), 'sanitize_text_field');
+
+            // Every instance hooks wp_ajax_fs_init; leave another plugin's request to that plugin's instance.
+            if (!empty($info['fs_action']) && !in_array($info['fs_action'], [$this->config->slug . '_activate_new', $this->config->slug . '_skip_activation'], true)) {
+                return;
+            }
+
             $notice = map_deep(wp_unslash(isset($_POST['notice']) ? $_POST['notice'] : []), 'sanitize_text_field');
             $fs_accounts = $this->get_fs_accounts();
+
+            // Activation data comes from the Freemius return URL, which carries the _activate_new nonce created in extend_config().
+            $is_activation = !empty($info['user_id']) || isset($info['pending_activation']);
+            if ($is_activation && !wp_verify_nonce($info['_wpnonce'] ?? '', $this->config->slug . '_activate_new')) {
+                wp_send_json_error('Invalid Request', 403);
+            }
 
             if (isset($info['is_skip_activation']) && $info['is_skip_activation'] === 'true') {
                 $site = $this->get_data();
@@ -112,12 +133,12 @@ class FSActivate extends FS_Lite
 
     function get_request($key = null)
     {
-        return isset($_GET[$key]) ? sanitize_text_field(wp_unslash($_GET[$key])) :  false;
+        return isset($_GET[$key]) ? sanitize_text_field(wp_unslash($_GET[$key])) :  false; // phpcs:ignore WordPress.Security.NonceVerification -- Generic accessor; callers must verify the nonce first.
     }
 
     function post_request($key = null)
     {
-        return isset($_POST[$key]) ? sanitize_text_field(wp_unslash($_POST[$key])) :  false;
+        return isset($_POST[$key]) ? sanitize_text_field(wp_unslash($_POST[$key])) :  false; // phpcs:ignore WordPress.Security.NonceVerification -- Generic accessor; callers must verify the nonce first.
     }
 
     function _deactivate_plugin_hook()
@@ -165,19 +186,16 @@ class FSActivate extends FS_Lite
 
     function fetch_info()
     {
-        $nonce = isset($_POST['nonce']) ? sanitize_text_field(wp_unslash($_POST['nonce'])) : '';
-        if (!wp_verify_nonce($nonce, "wp_ajax")) {
-            wp_send_json_error();
-        }
+        $this->verify_ajax_request();
 
         $plugin_data = [];
         unset($this->config->__FILE__);
         $result = [];
-        $thread = sanitize_text_field(isset($_POST['thread']) ? wp_unslash($_POST['thread']) : '');
+        $thread = sanitize_text_field(isset($_POST['thread']) ? wp_unslash($_POST['thread']) : ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified in verify_ajax_request().
         if ($thread === "permission_update") {
             $api = new Freemius_Lite();
-            $permissions = sanitize_text_field(isset($_POST['permissions']) ? wp_unslash($_POST['permissions']) : '');
-            $is_enabled =  sanitize_text_field(isset($_POST['is_enabled']) ? wp_unslash($_POST['is_enabled']) : '') === 'true';
+            $permissions = sanitize_text_field(isset($_POST['permissions']) ? wp_unslash($_POST['permissions']) : ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified in verify_ajax_request().
+            $is_enabled =  sanitize_text_field(isset($_POST['is_enabled']) ? wp_unslash($_POST['is_enabled']) : '') === 'true'; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified in verify_ajax_request().
             $fs_accounts = $this->get_fs_accounts();
             $result = $api->permission_update($fs_accounts, $this->config, compact('permissions', 'is_enabled'));
             if (!$result['success']) {
@@ -195,7 +213,7 @@ class FSActivate extends FS_Lite
         }
         global $wp_version;
         $user = wp_get_current_user();
-        $type = sanitize_text_field(isset($_POST['type']) ? wp_unslash($_POST['type']) : 'form');
+        $type = sanitize_text_field(isset($_POST['type']) ? wp_unslash($_POST['type']) : 'form'); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified in verify_ajax_request().
         $plugin_data = [];
         $site = [];
 
@@ -240,7 +258,7 @@ class FSActivate extends FS_Lite
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 if (typeof bsdkOptInFormHandler === 'function') {
-                    bsdkOptInFormHandler('<?php echo esc_html($this->prefix) ?>');
+                    bsdkOptInFormHandler('<?php echo esc_js($this->prefix) ?>');
                 }
             });
         </script>
@@ -250,11 +268,14 @@ class FSActivate extends FS_Lite
 
     function admin_head()
     {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         $redirect = get_option("$this->prefix-redirect", false);
         $request_uri = isset($_SERVER['REQUEST_URI']) ? sanitize_url(wp_unslash($_SERVER['REQUEST_URI'])) : '';
         if (!$redirect && !strpos($request_uri, 'post.php') && !strpos($request_uri, 'post-new.php')) {
             update_option("$this->prefix-redirect", true); ?><script>
-                window.location.href = '<?php echo esc_attr("admin.php?page=" . dirname($this->base_name)) ?>-opt-in';
+                window.location.href = '<?php echo esc_js("admin.php?page=" . dirname($this->base_name)) ?>-opt-in';
             </script><?php
                     }
                 }
@@ -269,7 +290,7 @@ class FSActivate extends FS_Lite
 
                     $opt_in_link =  admin_url("admin.php?page=" . dirname($this->base_name) . '-opt-in');
 
-                    $settings_link = '<a href="' . $opt_in_link . '" class="' . $classes . '" id="' . esc_attr($this->prefix) . 'OptInBtn" data-status="' . esc_attr($this->marketing_allowed ? 'agree' : 'not-allowed') . '">' . esc_html($this->marketing_allowed ? 'Opt Out' : 'Opt In') . '</a>';
+                    $settings_link = '<a href="' . esc_url($opt_in_link) . '" class="' . esc_attr($classes) . '" id="' . esc_attr($this->prefix) . 'OptInBtn" data-status="' . esc_attr($this->marketing_allowed ? 'agree' : 'not-allowed') . '">' . esc_html($this->marketing_allowed ? 'Opt Out' : 'Opt In') . '</a>';
 
                     array_unshift($links, $settings_link);
                     return $links;

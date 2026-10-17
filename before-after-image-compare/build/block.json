@@ -1,6 +1,7 @@
 {
   "apiVersion": 3,
   "name": "icb/image-compare",
+  "version": "1.1.22",
   "title": "Before After Comparison",
   "description": "Compare and filter between two media.",
   "category": "widgets",
@@ -330,13 +331,13 @@
         {
           "beforeVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-clrs.mp4"
             },
             "beforeLabel": "Before Label"
           },
           "afterVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-bw.mp4"
             },
             "afterLabel": "After Label"
           },
@@ -345,13 +346,13 @@
         {
           "beforeVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-clrs.mp4"
             },
             "beforeLabel": "Before Label"
           },
           "afterVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-bw.mp4"
             },
             "afterLabel": "After Label"
           },
@@ -360,13 +361,13 @@
         {
           "beforeVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/02/flower.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-clrs.mp4"
             },
             "beforeLabel": "Before Label"
           },
           "afterVideo": {
             "video": {
-              "url": "https://templates.bplugins.com/wp-content/uploads/2026/08/before-after-before-video.mp4"
+              "url": "https://cdn.jsdelivr.net/gh/bPlugins/bPlugins-media/big-bug-bunny-bw.mp4"
             },
             "afterLabel": "After Label"
           },

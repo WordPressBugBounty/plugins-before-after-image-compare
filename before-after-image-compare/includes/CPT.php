@@ -75,11 +75,14 @@ class CPT {
     }
     public function shortcodeCallback( $atts ) {
         $atts = shortcode_atts( ['id' => null], $atts, 'baicb' );
-        
-        if ( ! $atts['id'] ) return '';
+        $id   = absint( $atts['id'] );
 
-        $post = get_post( $atts['id'] );
-        if ( ! $post || post_password_required( $post ) ) return '';
+        if ( ! $id ) return '';
+
+        // Only comparisons may be embedded, and non-published ones only for users who can read them.
+        $post = get_post( $id );
+        if ( ! $post || $this->post_type !== $post->post_type || post_password_required( $post ) ) return '';
+        if ( 'publish' !== $post->post_status && ! current_user_can( 'read_post', $post->ID ) ) return '';
 
         wp_enqueue_style('icb-view-css', BAICB_DIR_URL . 'build/view.css', [], BAICB_PLUGIN_VERSION);
         wp_enqueue_script('icb-view-js', BAICB_DIR_URL . 'build/view.js', ['react', 'react-dom'], BAICB_PLUGIN_VERSION, true);
@@ -110,7 +113,8 @@ class CPT {
 					"nonce" => wp_create_nonce("icbLicenseActivation"),
 					"hasPro"=> BAICB_HAS_PRO,
 					'licenseActiveNonce' => wp_create_nonce("icbLicenseActivation"),
-                    'adminUrl' => admin_url()
+                    'adminUrl' => admin_url(),
+                    'dirUrl' => BAICB_DIR_URL
 				];
 
 				?>
@@ -119,7 +123,6 @@ class CPT {
 				<?php
 			}
 
-      
 //   function orderSubMenu( $menu_ord ){
 //         global $submenu;
 
