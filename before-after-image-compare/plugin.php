@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Before After Image Comparison - Block
  * Description: Compare and filter between two images
- * Version: 1.1.22
+ * Version: 1.1.23
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'icb_fs' ) ) {
     icb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'BAICB_PLUGIN_VERSION', '1.1.22' );
+    define( 'BAICB_PLUGIN_VERSION', '1.1.23' );
     // define( 'BAICB_PLUGIN_VERSION',  isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'murdwahid.local' === $_SERVER['HTTP_HOST'] ) ? time() : '1.1.15' );
     define( 'BAICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'BAICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
@@ -224,8 +224,9 @@ if ( function_exists( 'icb_fs' ) ) {
                     $links['go_pro'] = sprintf(
                         '<a href="%s" style="%s" target="">%s</a>',
                         esc_url( site_url( "/wp-admin/edit.php?post_type=image-compare&page=image-compare-help#/pricing" ) ),
-                        'color:#4527a4;font-weight:bold',
-                        esc_html__( 'Go Pro!', 'image-compare' )
+                        'color:#d63638;font-weight:bold',
+                        esc_html__( 'Upgrade to Pro & Save Up to 45% This Black Friday!
+!', 'image-compare' )
                     );
                 }
                 return $links;
@@ -245,4 +246,5 @@ if ( function_exists( 'icb_fs' ) ) {
         new ICBPlugin();
     }
     require_once __DIR__ . "/includes/CPT.php";
+    require_once __DIR__ . "/includes/Campaign.php";
 }
